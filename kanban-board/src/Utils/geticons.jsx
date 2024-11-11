@@ -16,6 +16,11 @@ export const getPriorityIcon = (priority) => {
         case "Medium": return <img src = {mediumPriority} alt="icon"></img>
         case "High": return <img src = {highPriority} alt="icon"></img>
         case "Urgent": return <img src = {urgent} alt="icon"></img>
+        case 0: return <img src = {noPriority} alt="icon"></img>
+        case 1: return <img src = {lowPriority} alt="icon"></img>
+        case 2: return <img src = {mediumPriority} alt="icon"></img>
+        case 3: return <img src = {highPriority} alt="icon"></img>
+        case 4: return <img src = {urgent} alt="icon"></img>
         default: return <img src = {noPriority} alt="icon"></img>
     }
 }

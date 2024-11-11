@@ -1,33 +1,27 @@
 .card {
     border-radius: 0.2rem;
-    padding: 0.5rem 1rem;
+    padding: 0.4rem 0.7rem;
     box-shadow: 0 0 0.5rem #12121221;
     background-color: #fff;
 }
 .card .ticket-id {
     color: #888a8f;
-    font-size: 0.5rem;
+    font-size: 0.6rem;
     font-weight: 600;
 }
 .card .title {
     color: #282a2f;
-    font-size: 0.65rem;  
+    font-size: 0.70rem;  
     text-align: left;
     font-weight: 600;
-    margin-top: 4px;
-    
+    margin-top: 4px;    
 }
 .card .middle-container {
     display: flex;
     flex-direction: row;
-    gap: 0.7rem;
-    margin-top: 0.2rem;
+    gap: 0.7rem;    
 }
-.card .middle-image{
-    padding-top: -10px;
-    padding-bottom: auto;
 
-}
 .card .bottom-container {
     gap: 0.5rem;
     display: flex;
@@ -42,7 +36,9 @@
     border: 1px solid #edeff2;
     border-radius: 0.25rem;
     padding: 0 0.35rem;
+    
 }
+
 .card .tag-icon {
     background-color: #bec2c8;
     border-radius: 9999px;
@@ -52,17 +48,17 @@
     margin-top: auto;
 }
 .card .tag-text {
-    color: #6b6f76;
-    font-size: 0.7rem;    
-    margin-top: 2px;
-    font-weight: 500;
+    color: #82868c;
+    font-size: 0.6rem;    
+    padding-bottom: 2px;
+    font-weight: 480;
 }
 
 .card .top-container {
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-between;    
 }
 
 .card .more-icon-container {
@@ -70,7 +66,7 @@
     place-items: center;
     border: 1px solid #edeff2;
     border-radius: 0.25rem;
-    padding: 0.25rem 0.5rem;   
+    padding: 0 0.3rem;   
 }
 
 .card svg {

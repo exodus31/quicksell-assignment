@@ -34,7 +34,7 @@ function App() {
       .catch((err) => {
         console.log(err);
       });
-  }, []);// eslint-disable-line react-hooks/exhaustive-deps
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   useEffect(() => {
     if (!tickets.length) return;
@@ -64,7 +64,8 @@ function App() {
       const groups = ordTickets.reduce(
         (result, ticket) => {
           let priority = "No priority";
-          if (ticket.priority === 1) { // get the priority in text format from priority in number. (for efficient arrangement in future).
+          if (ticket.priority === 1) {
+            // get the priority in text format from priority in number. (for efficient arrangement in future).
             priority = "Low";
           } else if (ticket.priority === 2) {
             priority = "Medium";
@@ -85,54 +86,58 @@ function App() {
 
       setGridData(groups);
     } else {
-      const groups = ordTickets.reduce((result, ticket) => {  
+      const groups = ordTickets.reduce((result, ticket) => {
         if (!result[ticket.userId]) {
           result[ticket.userId] = [];
         }
-        result[ticket.userId].push(ticket);  // push a ticket in array corresponding to its user id.
+        result[ticket.userId].push(ticket); // push a ticket in array corresponding to its user id.
         return result;
       }, {});
 
       setGridData(groups);
     }
-    
+
     setLoading(false);
   }, [grouping, ordering, tickets]); // eslint-disable-line react-hooks/exhaustive-deps
 
-  const onSetGrouping = useCallback((value) => { // change the grid layout whenever grouping is change by user.
+  const onSetGrouping = useCallback((value) => {
+    // change the grid layout whenever grouping is change by user.
     setLoading(true);
     setGrouping(value);
     saveSettings({ grouping: value });
-  }, []);// eslint-disable-line react-hooks/exhaustive-deps
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
-  const onSetOrdering = useCallback((value) => { // change the grid layout whenever ordering is change by user.
+  const onSetOrdering = useCallback((value) => {
+    // change the grid layout whenever ordering is change by user.
     setLoading(true);
     setOrdering(value);
     saveSettings({ ordering: value });
-  }, []);// eslint-disable-line react-hooks/exhaustive-deps
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   const priorityOrder = (tickets) =>
     tickets.sort((a, b) => (a.priority > b.priority ? -1 : 1)); // sort the tickets by priority.
   const titleOrder = (tickets) =>
     tickets.sort((a, b) => (a.title < b.title ? -1 : 1)); // sort the tickets by title.
 
-  const saveSettings = useCallback((data) => {    // save the settings to localstorage so they can be retained even after reloading.
+  const saveSettings = useCallback((data) => {
+    // save the settings to localstorage so they can be retained even after reloading.
     for (let key in data) localStorage.setItem(key, data[key]);
   }, []);
 
-  const loadSettings = useCallback(() => { // load the settings from localstorage if they are available else set some default value.
+  const loadSettings = useCallback(() => {
+    // load the settings from localstorage if they are available else set some default value.
     setGrouping(localStorage.getItem("grouping") || "status");
     setOrdering(localStorage.getItem("ordering") || "priority");
   }, []);
 
   return (
     <div className="App">
-      <Header            
+      <Header
         grouping={grouping}
         setGrouping={onSetGrouping}
         ordering={ordering}
         setOrdering={onSetOrdering}
-      /> 
+      />
       {loading ? (
         <Loader />
       ) : (

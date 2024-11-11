@@ -28,13 +28,13 @@ function Card({
         <div className="title">{ticket.title}</div>
       </div>
       <div className="bottom-container">
-        {hidePriorityIcon ? null : (
-          <>
-            <div className="more-icon-container">
-              {getPriorityIcon(ticket.priority)}
-            </div>
-          </>
-        )}
+          {hidePriorityIcon ? null : (
+            <>
+              <div className="more-icon-container">
+                {getPriorityIcon(ticket.priority)}
+              </div>
+            </>
+          )}
         {ticket.tag.map((t) => (
           <div key={t} className="tag-container">
             <div className="tag-icon"></div>

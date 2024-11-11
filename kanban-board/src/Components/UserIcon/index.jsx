@@ -8,7 +8,7 @@ function UserIcon({ name, available }) {
 
     return (
         <div className='usericon-container'>
-            <div className='usericon-text'>{text}</div>
+            <div className='usericon-text'>{text.toUpperCase()}</div>
             <div className={`user-status ${available && "available"}`}></div>
         </div>
     );
