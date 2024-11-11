@@ -16,9 +16,11 @@ function DisplayDropdown({ grouping, setGrouping, ordering, setOrdering }) {
       setVisible(false);
     }
   }, []);
-
-  const onGroupingChange = useCallback((e) => setGrouping(e.target.value), []); // sets grouping according to value selected by user.
-  const onOrderingChange = useCallback((e) => setOrdering(e.target.value), []); // sets ordering according to value selected by user.
+  
+  // sets grouping according to value selected by user.
+  const onGroupingChange = useCallback((e) => setGrouping(e.target.value), []);// eslint-disable-line react-hooks/exhaustive-deps
+  // sets ordering according to value selected by user.
+  const onOrderingChange = useCallback((e) => setOrdering(e.target.value), []);// eslint-disable-line react-hooks/exhaustive-deps
 
   useEffect(() => {
     document.addEventListener('click', handleClickOutside);

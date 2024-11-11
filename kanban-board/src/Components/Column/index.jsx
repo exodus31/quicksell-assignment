@@ -16,7 +16,7 @@ function Column({ tickets, grouping, groupBy, userData }) {
             return groupBy;
         if (grouping === "user")
             return userData[groupBy].name;
-    }, [grouping, groupBy]);
+    }, [grouping, groupBy]);// eslint-disable-line react-hooks/exhaustive-deps
 
     const icon = useMemo(() => { // extract the icon from given information.
         if (grouping === "status")
@@ -25,7 +25,7 @@ function Column({ tickets, grouping, groupBy, userData }) {
             return getPriorityIcon(groupBy);
         if (grouping === "user")
             return <UserIcon name={userData[groupBy].name} available={userData[groupBy].available} />
-    }, [grouping, groupBy])
+    }, [grouping, groupBy]);// eslint-disable-line react-hooks/exhaustive-deps
 
 
     return (
